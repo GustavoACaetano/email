@@ -18,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button btnEnviar = findViewById(R.id.btnEnviar);
-        // Definicao da acao do click do botao
+        // Definição da ação do clique do botão
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Obtendo dados digitados pelo usuario
+                // Obtendo dados digitados pelo usuário
                 EditText etEmail = findViewById(R.id.etEmail);
                 String email = etEmail.getText().toString();
                 EditText etAssunto = findViewById(R.id.etAssunto);
