@@ -23,16 +23,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Obtendo dados digitados pelo usuário
+                // Dados de Email
                 EditText etEmail = findViewById(R.id.etEmail);
                 String email = etEmail.getText().toString();
+
+                // Dados de assunto
                 EditText etAssunto = findViewById(R.id.etAssunto);
                 String assunto = etAssunto.getText().toString();
+
+                // Dados de texto
                 EditText etTexto = findViewById(R.id.etTexto);
                 String texto = etTexto.getText().toString();
 
+                // Intent para criar ação de redirecionar para enviar o email
                 Intent i = new Intent(Intent.ACTION_SENDTO);
                 i.setData(Uri.parse("mailto:"));
 
+                // Configurações para redirecionar pro email
                 String[] emails = new String[]{email};
                 i.putExtra(Intent.EXTRA_EMAIL, emails);
                 i.putExtra(Intent.EXTRA_SUBJECT, assunto);
