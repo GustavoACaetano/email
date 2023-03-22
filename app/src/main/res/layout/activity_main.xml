@@ -32,8 +32,8 @@
 
     <EditText
         android:id="@+id/etTexto"
-        android:layout_width="390dp"
-        android:layout_height="510dp"
+        android:layout_width="389dp"
+        android:layout_height="370dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:gravity="top"
@@ -52,6 +52,8 @@
         android:text="Enviar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTexto" />
+        app:layout_constraintTop_toBottomOf="@+id/etTexto"
+        app:layout_constraintVertical_bias="0.042" />
 </androidx.constraintlayout.widget.ConstraintLayout>
