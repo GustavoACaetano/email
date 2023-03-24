@@ -23,33 +23,35 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Obtendo dados digitados pelo usuário
+
                 // Dados de Email
-                EditText etEmail = findViewById(R.id.etEmail);
-                String email = etEmail.getText().toString();
+                EditText etEmail = findViewById(R.id.etEmail); // Selecionando o campo de texto de email
+                String email = etEmail.getText().toString(); // Salvando a string do campo de texto de email
 
                 // Dados de assunto
-                EditText etAssunto = findViewById(R.id.etAssunto);
-                String assunto = etAssunto.getText().toString();
+                EditText etAssunto = findViewById(R.id.etAssunto); // Selecionando o campo de texto de assunto
+                String assunto = etAssunto.getText().toString(); // Salvando a string do campo de texto de assunto
 
                 // Dados de texto
-                EditText etTexto = findViewById(R.id.etTexto);
-                String texto = etTexto.getText().toString();
+                EditText etTexto = findViewById(R.id.etTexto); // Selecionando o campo de texto do corpo do email
+                String texto = etTexto.getText().toString(); // Salvando a string do campo de texto do corpo do email
 
                 // Intent para criar ação de redirecionar para enviar o email
-                Intent i = new Intent(Intent.ACTION_SENDTO);
-                i.setData(Uri.parse("mailto:"));
+                Intent i = new Intent(Intent.ACTION_SENDTO); // Intent de ação de enviar por algum programa
+                i.setData(Uri.parse("mailto:")); // Indicar que é para os programas que executam a ação de enviar por email
 
-                // Configurações para redirecionar pro email
+                // Configurações para redirecionar pro email com os campos já preenchidos
                 String[] emails = new String[]{email};
                 i.putExtra(Intent.EXTRA_EMAIL, emails);
                 i.putExtra(Intent.EXTRA_SUBJECT, assunto);
                 i.putExtra(Intent.EXTRA_TEXT, texto);
 
+                // Usando try para executar a intent, porque pode falhar se o dispositivo não tiver um app que executa a ação
                 try {
                     startActivity(Intent.createChooser(i, "Escolha o APP"));
                     }
                 catch (ActivityNotFoundException e){
-                    Toast.makeText(MainActivity.this, "Não há nenhum app que posso realizar essa operação", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Não há nenhum app que posso realizar essa operação", Toast.LENGTH_LONG).show(); // Mensagem de erro
                 }
             };
         });
